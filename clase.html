@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>Genetico</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
+	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"> 
+</head>
+<body>
+
+	<div class="topnav" id="myTopnav">
+	  <a href="index.html">Simplex 3.0</a>
+	  <a href="genetico.html" class="active">Genetico</a>
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+	    <i class="fa fa-bars"></i>
+	  </a>
+	</div>	
+
+	<div class="container">
+		
+		<div class="input-group mb-3 input-group sm" id="ecuacionWriteSection">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> Ecuacion: f(x) = </span>
+			</div>
+		    <input class="form-control" type="text" id="ecuacion" value=""> 
+		    <div class="input-group-append">
+				<button class="btn btn-success" onclick="selectData();">Continuar</button>
+			</div>
+		</div>
+
+	<div class="input-group mb-3 input-group sm" id="dataEcuacionSection">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> Vectores: </span>
+			</div>
+			<input class="form-control" type="number" id="vectores" value="3">
+			<div class="input-group-append">
+				<button class="btn btn-success" onclick="resolver();">Resolver</button>
+			</div>
+		</div>
+
+		<div class="input-group mb-3 input-group sm">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> LimX: </span>
+			</div>
+		
+			<div class="input-group-prepend" style="margin-left: 10px">
+				<span class="input-group-text">[</span>
+			</div>
+			<input class="form-control" type="number" id="ajX" value="15">
+			<div class="input-group-append">
+				<span class="input-group-text"> ,</span>
+			</div>
+			<input class="form-control" type="number" id="bjX" value="62.5">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> ]</span>
+			</div>
+		</div>
+
+		<div class="input-group mb-3 input-group sm">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> LimY: </span>
+			</div>
+		
+			<div class="input-group-prepend" style="margin-left: 10px">
+				<span class="input-group-text">[</span>
+			</div>
+			<input class="form-control" type="number" id="ajY" value="0">
+			<div class="input-group-append">
+				<span class="input-group-text"> ,</span>
+			</div>
+			<input class="form-control" type="number" id="bjY" value="31.25">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> ]</span>
+			</div>
+
+		</div>
+			<div class="input-group mb-3 input-group sm">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> LimZ: </span>
+			</div>
+		
+			<div class="input-group-prepend" style="margin-left: 10px">
+				<span class="input-group-text">[</span>
+			</div>
+			<input class="form-control" type="number" id="ajZ" value="0">
+			<div class="input-group-append">
+				<span class="input-group-text"> ,</span>
+			</div>
+			<input class="form-control" type="number" id="bjZ" value="31.25">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> ]</span>
+			</div>
+		</div>
+
+		<div class="input-group mb-3 input-group sm">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> LimW: </span>
+			</div>
+		
+			<div class="input-group-prepend" style="margin-left: 10px">
+				<span class="input-group-text">[</span>
+			</div>
+			<input class="form-control" type="number" id="ajW" value="0">
+			<div class="input-group-append">
+				<span class="input-group-text"> ,</span>
+			</div>
+			<input class="form-control" type="number" id="bjW" value="31.25">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> ]</span>
+			</div>
+		</div>
+
+
+
+
+	</div>
+
+
+
+
+	<script src="./js/jquery-3.3.1.slim.min.js"></script>
+	<script src="./js/moment.min.js"></script>
+	<script src="./js/raphael-min.js"></script>
+	<script src="./js/morris.min.js"></script>
+	<script src="./js/navbar.js"></script>
+	<script src="./js/clase.js"></script>
+	<script src="./js/ASCIIMathML.js"></script>
+</body>
+</html>

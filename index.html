@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Metodos</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
+	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"> 
+</head>
+<body> 
+
+	<div class="topnav" id="myTopnav">
+	  <a href="index.html" class="active">Simplex 3.0</a>
+	  <a href="genetico.html">Genetico</a>
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+	    <i class="fa fa-bars"></i>
+	  </a>
+	</div>	
+
+	<div class="container">
+		<div class="alert alert-success" id="alertStatus" style="display: none"></div>
+		<label>Ingrese la funcion objetivo: </label>
+		<div class="input-group mb-3  input-group sm">
+			<div class="input-group-prepend">
+				<span class="input-group-text">z = </span>
+			</div>
+			<input class="form-control" type="number" id="a" value="0">
+			<div class="input-group-prepend">
+				<span class="input-group-text">a</span>
+			</div>
+			<input class="form-control" type="number" id="b" value="0">
+			<div class="input-group-prepend">
+				<span class="input-group-text">b</span>
+			</div>
+			<input class="form-control" type="number" id="c" value="0">
+			<div class="input-group-prepend">
+				<span class="input-group-text">c</span>
+			</div>
+			<input class="form-control" type="number" id="d" value="0">
+			<div class="input-group-prepend">
+				<span class="input-group-text">d</span>
+			</div>
+			<div class="input-group-append">
+				<button class="btn btn-success" onclick="resolverSimplex3();">Resolver</button>
+			</div> <!-- btn btn-outline-success --->
+		</div>
+		<div class="input-group mb-3  input-group sm">
+			<div class="input-group-prepend">
+				<span class="input-group-text">Añadir reestriccion: </span>
+			</div>
+			<div class="input-group-append">
+				<button class="btn btn-success" onclick="addReestriccion();">+</button>
+			</div>	
+		</div>
+		<div id="div_reestricciones">
+		</div>
+	</div>
+	<script src="./js/jquery-3.3.1.slim.min.js"></script>
+	<script src="./js/moment.min.js"></script>
+	<script src="./js/raphael-min.js"></script>
+	<script src="./js/morris.min.js"></script>
+	<script src="./js/navbar.js"></script>
+	<script src="./js/myJs.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>Genetico</title> 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
+	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"> 
+</head> 
+<body>
+ 
+	<div class="topnav" id="myTopnav"> 
+	  <a href="index.html">Simplex 3.0</a>
+	  <a href="genetico.html" class="active">Genetico</a>
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+	    <i class="fa fa-bars"></i>
+	  </a>
+	</div>	
+
+		<div class="container">
+			<div class="alert alert-success" id="alertStatus" style="display: none"></div>
+			<div class="input-group mb-3 input-group sm">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> Tipo de problema: </span>
+				</div>
+			    <select class="form-control" id="kindProblem">
+					<option value="fo">Funcion Objetivo</option>
+					<option value="ec">Ecuacion matematica</option>
+			    </select>
+			    <div class="input-group-append">
+					<button class="btn btn-success" onclick="selectKind();">Continuar</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="container" id="optFuncionObjetivoSection" style="display: none">
+			<div class="input-group mb-3  input-group sm" id="variablesFO">
+				<div class="input-group-prepend">
+					<span class="input-group-text">z = </span>
+				</div>
+				<input class="form-control" type="number" id="var0" value="0">
+				<div class="input-group-prepend">
+					<span class="input-group-text">a</span>
+				</div>
+				<input class="form-control" type="number" id="var1" value="0">
+				<div class="input-group-prepend">
+					<span class="input-group-text">b</span>
+				</div>
+			</div>
+			<div class="input-group mb-3  input-group sm">
+				<div class="input-group-prepend">
+					<button class="btn btn-outline-success" onclick="addVarFO();">Añadir variable a FO</button>
+				</div> 
+				<div class="input-group-prepend">
+					<span class="input-group-text"> Vectores: </span>
+				</div>
+				<input class="form-control" type="number" id="vectoresFO" value="100">
+
+				<div class="input-group-prepend">
+					<span class="input-group-text"> Iteraciones: </span>
+				</div>
+				<input class="form-control" type="number" id="iteracionesFO" value="10">
+
+				<div class="input-group-prepend">
+					<span class="input-group-text"> Precision de Bits: </span>
+				</div>
+				<input class="form-control" type="number" id="precisionBitsFO" value="1">
+				<div class="input-group-append">
+					<button class="btn btn-success" onclick="resolverGenetic('fo');">Resolver</button>
+				</div> 
+			</div>
+
+			<div class="wallBlack">
+				<div class="container_white">
+					<i class="fa fa-times" aria-hidden="true" onclick="$('.wallBlack').fadeOut()"></i>
+					<canvas id="canvas" width="800" height="300"></canvas>
+				</div>
+			</div>
+
+			<div class="input-group mb-3  input-group sm">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Añadir reestriccion: </span>
+				</div>
+				<div class="input-group-append">
+					<button class="btn btn-success" onclick="addReestriccion();">+</button>
+				</div>	
+				<div class="input-group-append">
+					<button class="btn btn-outline-success" onclick="openGraph();">Abrir Grafica</button>
+				</div> 
+			</div>
+			<div id="div_reestricciones">
+			</div>
+			<div id="resultados">
+			</div>
+		</div>
+			
+		<div class="container" id="optEcuacionSection" style="display: none">
+			<div class="input-group mb-3 input-group sm" id="ecuacionWriteSection">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> Ecuacion: f(x) = </span>
+				</div>
+			    <input class="form-control" type="text" id="ecuacion" value=""> 
+			    <div class="input-group-append">
+					<button class="btn btn-success" onclick="selectData();">Continuar</button>
+				</div>
+			</div>
+			
+			<div class="input-group mb-3 input-group sm" id="dataEcuacionSection" style="display: none">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> Vectores: </span>
+				</div>
+				<input class="form-control" type="number" id="vectores" value="10">
+
+				<div class="input-group-prepend">
+					<span class="input-group-text"> Iteraciones: </span>
+				</div>
+				<input class="form-control" type="number" id="iteraciones" value="3">
+
+				<div class="input-group-prepend" style="margin-left: 10px">
+					<span class="input-group-text">[</span>
+				</div>
+				<input class="form-control" type="number" id="aj" value="0">
+				<div class="input-group-append">
+					<span class="input-group-text"> ,</span>
+				</div>
+				<input class="form-control" type="number" id="bj" value="0.001">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> ]</span>
+				</div>
+				<div class="input-group-append">
+					<button class="btn btn-success" onclick="resolverGenetic('ec');">Resolver</button>
+				</div>
+			</div>
+		</div>
+
+			
+		
+
+	<script src="./js/jquery-3.3.1.slim.min.js"></script>
+	<script src="./js/moment.min.js"></script>
+	<script src="./js/raphael-min.js"></script>
+	<script src="./js/morris.min.js"></script>
+	<script src="./js/navbar.js"></script>
+	<script src="./js/jsFunUser.js"></script>
+	<script src="./js/jsGenetico.js"></script>
+	<script src="./js/jsGenericoMethods.js"></script>
+
+
+</body>
+</html>
