@@ -1,6 +1,6 @@
 # AlgoritmoGenetico
 
-Proyecto de la materia deMetodos Cuantitativos para la Toma de decisiones, con el profesor Ariel Lopez Rojas, de la Escuela Superior de Computo
+Proyecto de la materia de Metodos Cuantitativos para la Toma de decisiones, con el profesor Ariel Lopez Rojas, de la Escuela Superior de Computo
 
 # LIVE-DEMO: 
 > https://irvingguerra.github.io/AlgoritmoGenetico/genetico.html
