@@ -1,4 +1,4 @@
-# AlgoritmoGenetico
+# Algoritmo Genetico
 
 Proyecto de la materia de Metodos Cuantitativos para la Toma de decisiones, con el profesor Ariel Lopez Rojas, de la Escuela Superior de Computo
 
